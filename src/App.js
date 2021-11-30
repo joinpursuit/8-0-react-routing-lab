@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch, Link } from "react-router-dom";
 
 /*
   Components
@@ -29,13 +30,15 @@ class App extends React.Component {
   }
 
   render() {
-    const { employees, owners, pets } = this.state;
+    // const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/pets" component={StaffList} />
+          <Route path="/staff" component={PetsList} />
+        </Switch>
         <Footer />
       </div>
     );
