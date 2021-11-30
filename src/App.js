@@ -8,6 +8,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import { Route, Link, Switch } from "react-router-dom";
 
 /*
   Data
@@ -33,9 +34,11 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/Pets" component={PetsList} />
+          <Route path="/Staff" component={StaffList} />
+        </Switch>
         <Footer />
       </div>
     );
