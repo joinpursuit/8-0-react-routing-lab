@@ -1,7 +1,8 @@
 import Staffer from "./Staffer";
 import "./StaffList.css";
+import { employees } from "../../data/employees";
 
-export const StaffList = ({ employees }) => {
+export const StaffList = () => {
   const staff = employees.map((employee) => (
     <Staffer key={employee.id} employee={employee} />
   ));
