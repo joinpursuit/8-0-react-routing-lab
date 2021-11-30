@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Route, Link, Switch } from "react-router-dom";
 /*
   Components
 */
@@ -33,9 +33,23 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            element={<Home employees={employees} owners={owners} pets={pets} />}
+          />
+          <Route path="/staff" element={<StaffList employees={employees} />} />
+          <Route
+            path="/pets"
+            element={
+              <>
+                <PetsList pets={pets} />
+                <>{console.log("something")}</>
+              </>
+            }
+          />
+        </Switch>
         <Footer />
       </div>
     );
