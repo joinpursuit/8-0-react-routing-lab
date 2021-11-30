@@ -4,6 +4,7 @@ import splashImage from "./andrew-s-unsplash.jpg";
 import "./Home.css";
 
 export const Home = ({ employees, owners, pets }) => {
+  console.log(owners);
   return (
     <main>
       <section className="splash-image">
