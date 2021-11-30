@@ -6,9 +6,7 @@ export const Nav = () => {
     <header>
       <article>
         <h1>
-          <Link to="/">
-            Northwest <span>Animal Hospital</span>
-          </Link>
+          <Link to="/">Northwest <span>Animal Hospital</span></Link>
         </h1>
       </article>
       <aside>
