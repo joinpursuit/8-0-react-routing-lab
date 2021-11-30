@@ -23,26 +23,22 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
+        <Nav />
         <Switch>
           <Route exact path="/">
-            <Nav />
             <Home employees={employees} owners={owners} pets={pets} />
-            <Footer />
           </Route>
-
+          
           <Route path="/staff">
-            <Nav />
             <StaffList employees={employees} />
-            <Footer />
           </Route>
 
           <Route path="/pets">
           <Redirect exact from="/pets" to="/pets/cats" />
-            <Nav />
             <PetsList pets={pets} />
-            <Footer />
           </Route>
         </Switch>
+        <Footer />
       </div>
     );
   }
