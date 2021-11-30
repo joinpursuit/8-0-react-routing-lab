@@ -1,22 +1,24 @@
-import React from "react";
+import React from 'react';
 
 /*
   Components
 */
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
-import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
-import PetsList from "./components/pets/PetsList";
+import Nav from './components/common/Nav';
+import Footer from './components/common/Footer';
+import Home from './components/home/Home';
+import StaffList from './components/staff/StaffList';
+import PetsList from './components/pets/PetsList';
 
 /*
   Data
   ---------------
   Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
 */
-import { employees } from "./data/employees.js";
-import { owners } from "./data/owners";
-import { pets } from "./data/pets";
+import { employees } from './data/employees.js';
+import { owners } from './data/owners';
+import { pets } from './data/pets';
+
+import { Link, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +35,17 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Switch>
+          <Route exact path="/">
+            <Home employees={employees} owners={owners} pets={pets} />
+          </Route>
+          <Route path="/staff">
+            <StaffList employees={employees} />
+          </Route>
+          <Route path="/pets">
+            <PetsList pets={pets} />
+          </Route>
+        </Switch>
         <Footer />
       </div>
     );
