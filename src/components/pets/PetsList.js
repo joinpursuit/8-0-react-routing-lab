@@ -1,8 +1,9 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
+import { pets } from "../../data/pets";
 
-export const PetsList = ({ pets }) => {
+export const PetsList = () => {
   const [cats, dogs] = pets.reduce(
     (acc, pet) => {
       const position = pet.kind === "Cat" ? 0 : 1;
