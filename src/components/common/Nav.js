@@ -1,22 +1,27 @@
-import "./Nav.css";
+import { Link } from 'react-router-dom';
+import './Nav.css';
 
 export const Nav = () => {
   return (
     <header>
       <article>
         <h1>
-          <a href="/">
+          <Link exact to="/">
             Northwest <span>Animal Hospital</span>
-          </a>
+          </Link>
         </h1>
       </article>
       <aside>
         <ul>
           <li>
-            <a href="/staff">All Staff</a>
+            <Link exact to="/staff">
+              All Staff
+            </Link>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            <Link exact to="/pets">
+              All Pets
+            </Link>
           </li>
         </ul>
       </aside>

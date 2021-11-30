@@ -1,4 +1,4 @@
-import "./NewsletterForm.css";
+import './NewsletterForm.css';
 
 export const NewsletterForm = () => {
   return (

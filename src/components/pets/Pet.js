@@ -1,8 +1,8 @@
-import "./Pet.css";
+import './Pet.css';
 
 const iconMap = {
-  cat: "🐈",
-  dog: "🐕",
+  cat: '🐈',
+  dog: '🐕',
 };
 
 export const Pet = ({ kind, pet }) => {

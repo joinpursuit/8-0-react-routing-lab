@@ -1,22 +1,20 @@
-import React from "react";
+import React from 'react';
+import { Routes } from './components/common/Routes';
 
 /*
   Components
 */
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
-import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
-import PetsList from "./components/pets/PetsList";
+import Nav from './components/common/Nav';
+import Footer from './components/common/Footer';
 
 /*
   Data
   ---------------
   Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
 */
-import { employees } from "./data/employees.js";
-import { owners } from "./data/owners";
-import { pets } from "./data/pets";
+import { employees } from './data/employees.js';
+import { owners } from './data/owners';
+import { pets } from './data/pets';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +31,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Routes employees={employees} owners={owners} pets={pets} />
         <Footer />
       </div>
     );
