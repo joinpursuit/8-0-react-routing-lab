@@ -1,7 +1,4 @@
-import { unmountComponentAtNode } from "react-dom";
-import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "../home/Home";
-import StaffList from "../staff/StaffList";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 export const Nav = () => {
@@ -9,7 +6,6 @@ export const Nav = () => {
 
 
   return (
-    <Router>
 
     <header>
       <article>
@@ -25,20 +21,12 @@ export const Nav = () => {
             <Link to="/staff">All Staff</Link>
           </li>
           <li>
-            <Link exact to="/pets/cat">All Pets</Link>
+            <Link exact to="/pets">All Pets</Link>
           </li>
         </ul>
       </aside>
     </header>
     
-    {/* <Switch>
-      <Route exact path="/">
-      </Route>
-    <Route path="/staff">
-    <StaffList />
-    </Route>
-      </Switch> */}
-    </Router>
   );
 };
 

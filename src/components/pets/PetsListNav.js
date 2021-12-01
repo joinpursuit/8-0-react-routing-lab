@@ -1,9 +1,8 @@
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./PetsListNav.css";
 
 export const PetsListNav = ({ cats, dogs }) => {
   return (
-    <Router>
     <nav className="pets-nav">
       <ul>
         <li>
@@ -14,7 +13,6 @@ export const PetsListNav = ({ cats, dogs }) => {
         </li>
       </ul>
     </nav>
-    </Router>
   );
 };
 
