@@ -26,7 +26,7 @@ const PetsList = () => {
         <Route path="/pets/dogs" component={Dogs} />
         {/* Quickest way to render components */}
         {/* <Route path="/pets/cats"> {**JSX Element w. props / Component alone / Mapped elements /render any of those } </Route> */}
-        //
+
         <Redirect to="/pets/cats"> {Cats} </Redirect>
       </section>
     </section>
