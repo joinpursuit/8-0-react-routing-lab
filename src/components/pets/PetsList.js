@@ -1,3 +1,4 @@
+import { Route, Switch, Redirect } from "react-router-dom";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
@@ -17,14 +18,26 @@ export const PetsList = ({ pets }) => {
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
         {/* All cats section */}
-        {cats.map((cat) => (
-          <Pet key={cat.id} kind="cat" pet={cat} />
-        ))}
+        <Switch>
+
+        <Route exact path="/pets">
+          <Redirect to="/pets" />
+        </Route>
+
+        <Route path="/pets/cats">
+          {cats.map((cat) => (
+            <Pet key={cat.id} kind="cat" pet={cat} />
+            ))}
+        </Route>
 
         {/* All dogs section */}
-        {dogs.map((dog) => (
-          <Pet key={dog.id} kind="dog" pet={dog} />
+        <Route path="/pets/dogs">
+          {dogs.map((dog) => (
+            <Pet key={dog.id} kind="dog" pet={dog} />
         ))}
+        </Route>
+        
+        </Switch>
       </section>
     </section>
   );
