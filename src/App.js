@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes } from './components/common/Routes';
+import { Routings } from './components/common/Routings';
 
 /*
   Components
@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Routes employees={employees} owners={owners} pets={pets} />
+        <Routings employees={employees} owners={owners} pets={pets} />
         <Footer />
       </div>
     );
