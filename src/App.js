@@ -20,24 +20,24 @@ import { owners } from "./data/owners";
 import { pets } from "./data/pets";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      employees,
-      owners,
-      pets,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     employees,
+  //     owners,
+  //     pets,
+  //   };
+  // }
 
   render() {
-    const { employees, owners, pets } = this.state;
+    // const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Pets" component={PetsList} />
-          <Route path="/Staff" component={StaffList} />
+          <Route path="/pets" component={PetsList} />
+          <Route path="/staff" component={StaffList} />
         </Switch>
         <Footer />
       </div>
