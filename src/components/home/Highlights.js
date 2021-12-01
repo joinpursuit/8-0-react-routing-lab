@@ -1,6 +1,9 @@
 import "./Highlights.css";
+const employees = require("../../data/employees");
+const owners = require("../../data/owners");
+const pets = "../../data/pets";
 
-export const Highlights = ({ employees, owners, pets }) => {
+const Highlights = () => {
   return (
     <section className="highlights">
       <article>

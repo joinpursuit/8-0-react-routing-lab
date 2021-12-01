@@ -1,4 +1,4 @@
-export const owners = [
+const owners = [
   {
     id: "434AFaI",
     firstName: "Bobby",
@@ -114,3 +114,5 @@ export const owners = [
     zipCode: "98115",
   },
 ];
+
+module.exports = owners;
