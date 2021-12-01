@@ -23,14 +23,14 @@ export const PetsList = ({ pets }) => {
             <Redirect to="/pets/cats" />
           </Route>
 
-          <Route>
+          <Route path="/pets/cats">
             {/* All cats section */}
             {cats.map((cat) => (
               <Pet key={cat.id} kind="cat" pet={cat} />
             ))}
           </Route>
 
-          <Route>
+          <Route path="/pets/dogs">
             {/* All dogs section */}
             {dogs.map((dog) => (
               <Pet key={dog.id} kind="dog" pet={dog} />
