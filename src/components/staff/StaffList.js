@@ -1,10 +1,23 @@
 import Staffer from "./Staffer";
 import "./StaffList.css";
+import { employees } from "../../data/employees";
+import { Component } from "react";
 
-export const StaffList = ({ employees }) => {
-  const staff = employees.map((employee) => (
+//in order to use data from employees, had to turn staff list into a class component and set a state of employees
+
+class StaffList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      employees,
+    };
+  }
+
+  render() {
+    const staff = employees.map((employee) => (
     <Staffer key={employee.id} employee={employee} />
-  ));
+    ));
+  
 
   return (
     <section className="staff-list">
@@ -13,5 +26,5 @@ export const StaffList = ({ employees }) => {
     </section>
   );
 };
-
+}
 export default StaffList;
