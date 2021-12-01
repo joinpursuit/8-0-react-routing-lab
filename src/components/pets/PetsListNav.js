@@ -9,7 +9,7 @@ export const PetsListNav = ({ cats, dogs }) => {
         <Link to="/pets/cats">See All Cats ({cats.length})</Link>
         </li>
         <li>
-        <Link to="/pets/dogs">See All D ({dogs.length})</Link>
+        <Link to="/pets/dogs">See All Dogs ({dogs.length})</Link>
         </li>
       </ul>
     </nav>

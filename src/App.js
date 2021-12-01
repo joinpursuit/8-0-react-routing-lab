@@ -1,50 +1,19 @@
-import React from "react";
-import {Route, Routes, Navigate} from "react-router-dom";
-/*
-  Components
-*/
-import Nav from "./components/common/Nav";
 import Footer from "./components/common/Footer";
-import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
-import PetsList from "./components/pets/PetsList";
+import Nav from "./components/common/Nav";
+import Main from "./components/Main";
 
-/*
-  Data
-  ---------------
-  Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
-*/
-import { employees } from "./data/employees.js";
-import { owners } from "./data/owners";
-import { pets } from "./data/pets";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      employees,
-      owners,
-      pets,
-    };
-  }
-
-  render() {
-    const { employees, owners, pets } = this.state;
+export const App = () => {
+ 
     return (
-      <div className="wrapper">
-        <Nav />
-      
-        <Routes>
-        <Route exact path="/" element={ <Home employees={employees} owners={owners} pets={pets} />} />
-        <Route path="/staff" element={ <StaffList employees={employees} />} />
-        <Route path="/pets/*" element={   <PetsList pets={pets} />} />
-        </Routes>
-       
-     
-        <Footer />
-      </div>
+      <>
+        <div className="wrapper">
+          <Nav/>
+               <Main />
+          <Footer/>
+        </div>
+      </>
     );
-  }
 }
 
 export default App;
