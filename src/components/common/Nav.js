@@ -17,7 +17,7 @@ export const Nav = () => {
             <Link to="/staff">All Staff</Link>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            <Link to="/pets">All Pets</Link>
           </li>
         </ul>
       </aside>
