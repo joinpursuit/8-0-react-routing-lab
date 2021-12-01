@@ -1,4 +1,4 @@
-export const employees = [
+const employees = [
   {
     id: "z7GIN_i",
     firstName: "Leah",
@@ -40,3 +40,5 @@ export const employees = [
     title: "Client Services Coordinator",
   },
 ];
+
+module.exports = employees

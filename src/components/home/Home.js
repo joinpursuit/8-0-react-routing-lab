@@ -3,12 +3,12 @@ import NewsletterForm from "./NewsletterForm";
 import splashImage from "./andrew-s-unsplash.jpg";
 import "./Home.css";
 
-export const Home = ({ employees, owners, pets }) => {
+export const Home = () => {
   return (
     <main>
       <section className="splash-image">
         <img src={splashImage} alt="Splash." />
-        <Highlights employees={employees} owners={owners} pets={pets} />
+        <Highlights />
         <NewsletterForm />
       </section>
     </main>

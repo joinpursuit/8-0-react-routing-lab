@@ -1,4 +1,4 @@
-export const pets = [
+const pets = [
   {
     id: "dGXf5O9",
     name: "Lady",
@@ -140,3 +140,5 @@ export const pets = [
     employeeId: "vlJtFOU",
   },
 ];
+
+module.exports = pets;
