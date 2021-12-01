@@ -1,6 +1,7 @@
 import "./Highlights.css";
 
 export const Highlights = ({ employees, owners, pets }) => {
+
   return (
     <section className="highlights">
       <article>
