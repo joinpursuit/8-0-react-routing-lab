@@ -1,26 +1,44 @@
+import { unmountComponentAtNode } from "react-dom";
+import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "../home/Home";
+import StaffList from "../staff/StaffList";
 import "./Nav.css";
 
 export const Nav = () => {
+
+
+
   return (
+    <Router>
+
     <header>
       <article>
         <h1>
-          <a href="/">
+          <Link to="/">
             Northwest <span>Animal Hospital</span>
-          </a>
+          </Link>
         </h1>
       </article>
       <aside>
         <ul>
           <li>
-            <a href="/staff">All Staff</a>
+            <Link to="/staff">All Staff</Link>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            <Link exact to="/pets/cat">All Pets</Link>
           </li>
         </ul>
       </aside>
     </header>
+    
+    {/* <Switch>
+      <Route exact path="/">
+      </Route>
+    <Route path="/staff">
+    <StaffList />
+    </Route>
+      </Switch> */}
+    </Router>
   );
 };
 
