@@ -1,7 +1,7 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import { Route, Redirect } from "react-router";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 export const PetsList = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
@@ -16,25 +16,25 @@ export const PetsList = ({ pets }) => {
   return (
     <section className="pets-wrapper">
       <PetsListNav cats={cats} dogs={dogs} />
-
       <section className="pets-list">
-          <Route exact path='/pets'>
-            <Redirect from='/pets' to='/pets/cats' /> {/* navigates to cats*/}
-            </Route>
-
-        {/* All cats section */}
-        <Route path ='/pets/cats'>
-        {cats.map((cat) => (
-          <Pet key={cat.id} kind="cat" pet={cat} />
-        ))}
-        </Route>
-
-        <Route path ='/pets/dogs'>
-        {/* All dogs section */}
-        {dogs.map((dog) => (
-          <Pet key={dog.id} kind="dog" pet={dog} />
-        ))}
-        </Route>
+        <Switch>
+          <Route exact path="/pets">
+            <Redirect to="/pets/cats" />
+            {/* Redirect for the tests */}
+          </Route>
+          <Route path="/pets/cats">
+            {/* All cats section */}
+            {cats.map((cat) => (
+              <Pet key={cat.id} kind="cat" pet={cat} />
+            ))}
+          </Route>
+          <Route path="/pets/dogs">
+            {/* All dogs section */}
+            {dogs.map((dog) => (
+              <Pet key={dog.id} kind="dog" pet={dog} />
+            ))}
+          </Route>
+        </Switch>
       </section>
     </section>
   );
