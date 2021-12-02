@@ -35,15 +35,17 @@ class App extends React.Component {
         <Nav />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/Pets' component={PetsList} />
+          <Route path="/pets">
+            <PetsList pets={pets} />
+          </Route>
           <Route path='/Staff' component={StaffList} />
           </Switch>
-        {/* when the url changes, display this component}
+        {/* when the url changes, display this component*/}
 
 
         {/* <Home employees={employees} owners={owners} pets={pets} />
         <StaffList employees={employees} />
-        <PetsList pets={pets} /> */}
+        <PetsList pets={pets} />  */}
         <Footer />
       </div>
     );
