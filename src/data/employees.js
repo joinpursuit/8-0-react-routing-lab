@@ -40,3 +40,5 @@ export const employees = [
     title: "Client Services Coordinator",
   },
 ];
+
+export default employees;

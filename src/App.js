@@ -1,7 +1,8 @@
+import { Switch, Route, Redirect } from "react-router-dom";
 import React from "react";
 
 /*
-  Components
+Components
 */
 import Nav from "./components/common/Nav";
 import Footer from "./components/common/Footer";
@@ -14,9 +15,9 @@ import PetsList from "./components/pets/PetsList";
   ---------------
   Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
 */
-import { employees } from "./data/employees.js";
-import { owners } from "./data/owners";
-import { pets } from "./data/pets";
+import employees from "./data/employees.js";
+import owners from "./data/owners";
+import pets from "./data/pets";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,11 +33,29 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
-        <Nav />
+        {/* <Nav />
         <Home employees={employees} owners={owners} pets={pets} />
         <StaffList employees={employees} />
         <PetsList pets={pets} />
-        <Footer />
+        <Footer /> */}
+        <Switch>
+          <Redirect exact from="/pets" to="/pets/cats" />
+          <Route exact path="/">
+            <Nav />
+            <Home employees={employees} owners={owners} pets={pets} />
+            <Footer />
+          </Route>
+          <Route path="/staff">
+            <Nav />
+            <StaffList employees={employees} />
+            <Footer />
+          </Route>
+          <Route path="/pets">
+            <Nav />
+            <PetsList pets={pets} />
+            <Footer />
+          </Route>
+        </Switch>
       </div>
     );
   }
