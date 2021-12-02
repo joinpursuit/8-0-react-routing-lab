@@ -1,6 +1,4 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-
+import { Route, Switch, Redirect } from "react-router-dom";
 /*
   Components
 */
@@ -9,7 +7,6 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
-
 /*
   Data
   ---------------
@@ -19,40 +16,25 @@ import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      employees,
-      owners,
-      pets,
-    };
-  }
-
-  render() {
-    const { employees, owners, pets } = this.state;
-    return (
-      <div className="wrapper">
-        <Nav />
-        <Switch>
-          <Route exact path="/">
-            <Home employees={employees} owners={owners} pets={pets} />
-          </Route>
-          <Route path="/staff">
-            <StaffList employees={employees} />
-          </Route>
-          <Route path="/pets">
-            <PetsList pets={pets} />
-          </Route>
-          {/*
-          <Route path='/staff' component={StaffList } />
-          <Route path='/pets' component={PetList } /> 
-          */}
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="wrapper">
+      <Nav />
+      <Switch>
+        <Route exact path="/">
+          <Home employees={employees} owners={owners} pets={pets} />
+        </Route>
+        <Route path="/staff">
+          <StaffList employees={employees} />
+        </Route>
+        <Route path="/pets">
+          {/* <Redirect to="/pets/cats" /> */}
+          <PetsList pets={pets} />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 
 export default App;
