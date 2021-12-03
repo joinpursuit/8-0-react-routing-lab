@@ -114,3 +114,5 @@ export const owners = [
     zipCode: "98115",
   },
 ];
+
+export default owners;
