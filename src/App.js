@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 /*
   Components
@@ -31,13 +32,28 @@ class App extends React.Component {
   render() {
     const { employees, owners, pets } = this.state;
     return (
-      <div className="wrapper">
-        <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
-        <Footer />
-      </div>
+      <Router>
+        <div className="wrapper">
+          <Switch>
+            <Route exact path="/">
+              <Nav />
+              <Home employees={employees} owners={owners} pets={pets} />
+              <Footer />
+            </Route>
+            <Route path="/staff">
+              <Nav />
+              <StaffList employees={employees} />
+              <Footer />
+            </Route>
+            <Route path="/pets">
+              <Redirect to="/pets/cats"/>
+              <Nav />
+              <PetsList pets={pets} />
+              <Footer />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
