@@ -36,12 +36,17 @@ class App extends React.Component {
         <div className="wrapper">
           <Nav />
           <Switch>
-            <Route exact path="/"><Home employees={employees} owners={owners} pets={pets} /></Route>
+            <Route exact path="/">
+              <Home employees={employees} owners={owners} pets={pets} />
+            </Route>
             
-            <Route path="/staff"><StaffList employees={employees} /></Route>
+            <Route path="/staff">
+              <StaffList employees={employees} />
+            </Route>
             
-            <Route path="/pets"><PetsList pets={pets} /></Route>
-            
+            <Route path="/pets">
+              <PetsList pets={pets} />
+            </Route>
           </Switch>
           <Footer />
         </div>
