@@ -17,6 +17,7 @@ import PetsList from "./components/pets/PetsList";
 import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
+import { BrowserRouter as Route, Switch, Redirect } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +34,22 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
+        {/* <Home employees={employees} owners={owners} pets={pets} />
         <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <PetsList pets={pets} /> */}
+
+        <Switch>
+          <Route exact path="/">
+            <Home employees={employees} owners={owners} pets={pets} />
+          </Route>
+          <Route path="/staff">
+            <StaffList employees={employees} />
+          </Route>
+          <Route path="/pets">
+            <PetsList pets={pets} />
+            <Redirect to="/pets/cats/" />
+          </Route>
+        </Switch>
         <Footer />
       </div>
     );
