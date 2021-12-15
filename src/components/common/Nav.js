@@ -1,12 +1,12 @@
-import "./Nav.css";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 export const Nav = () => {
   return (
+    
     <header>
       <article>
         <h1>
-          
           <Link to="/" >
             Northwest <span>Animal Hospital</span>
           </Link>
