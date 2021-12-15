@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 /*
   Components
@@ -6,8 +7,8 @@ import React from "react";
 import Nav from "./components/common/Nav";
 import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
-import PetsList from "./components/pets/PetsList";
+// import StaffList from "./components/staff/StaffList";
+// import PetsList from "./components/pets/PetsList";
 
 /*
   Data
@@ -34,8 +35,8 @@ class App extends React.Component {
       <div className="wrapper">
         <Nav />
         <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        {/* <StaffList employees={employees} />
+        <PetsList pets={pets} /> */}
         <Footer />
       </div>
     );

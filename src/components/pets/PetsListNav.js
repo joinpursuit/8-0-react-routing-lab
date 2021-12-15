@@ -1,5 +1,12 @@
 import "./PetsListNav.css";
 
+
+
+
+
+
+
+
 export const PetsListNav = ({ cats, dogs }) => {
   return (
     <nav className="pets-nav">
