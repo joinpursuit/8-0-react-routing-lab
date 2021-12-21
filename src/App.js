@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 /*
   Components
@@ -7,8 +7,8 @@ import {Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Nav from "./components/common/Nav";
 import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
-// import StaffList from "./components/staff/StaffList";
-// import PetsList from "./components/pets/PetsList";
+import StaffList from "./components/staff/StaffList";
+import PetsList from "./components/pets/PetsList";
 
 /*
   Data
@@ -34,7 +34,28 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
+          <Switch>
+                <Route exact path="/">
+                  <Home employees={employees} owners={owners} pets={pets} />
+                </Route>
+
+
+               <Route path="/staff">
+                <StaffList employees={employees}/>
+               </Route>
+          
+               <Route path="/pets">
+                 <Redirect to="/pets/cats"/>
+                 <PetsList pets={pets}/>
+              </Route>
+
+          </Switch>
+
+
+
+
+
+        {/* <Home employees={employees} owners={owners} pets={pets} /> */}
         {/* <StaffList employees={employees} />
         <PetsList pets={pets} /> */}
         <Footer />
