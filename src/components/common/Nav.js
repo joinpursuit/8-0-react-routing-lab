@@ -1,5 +1,7 @@
 import "./Nav.css";
 
+import { Link } from "react-router-dom"
+
 export const Nav = () => {
   return (
     <header>
@@ -10,13 +12,14 @@ export const Nav = () => {
           </a>
         </h1>
       </article>
+
       <aside>
         <ul>
           <li>
-            <a href="/staff">All Staff</a>
+            <Link to="/staff">All Staff</Link>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            <Link to="/pets">All Pets</Link>
           </li>
         </ul>
       </aside>

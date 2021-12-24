@@ -18,6 +18,8 @@ import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
 
+import {Route, Switch} from "react-router-dom"
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,10 +35,13 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
         <Footer />
+
+        <Switch>
+          <Home employees={employees} owners={owners} pets={pets} />
+          <StaffList employees={employees} />
+          <PetsList pets={pets} />
+        </Switch>
       </div>
     );
   }
