@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, Route, BrowserRouter as Router, Switch,Redirect } from 'react-router-dom';
 
 /*
   Components
@@ -18,6 +19,7 @@ import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -32,14 +34,35 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
-        <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
-        <Footer />
-      </div>
-    );
-  }
+      <Nav />
+        <Switch>
+              <Route exact path="/">
+                <Home employees={employees} owners={owners} pets={pets} />
+              </Route>
+
+
+             <Route path="/staff">
+              <StaffList employees={employees}/>
+             </Route>
+        
+             <Route path="/pets">
+               <Redirect to="/pets/cats"/>
+               <PetsList pets={pets}/>
+            </Route>
+
+        </Switch>
+
+
+
+
+
+      {/* <Home employees={employees} owners={owners} pets={pets} /> */}
+      {/* <StaffList employees={employees} />
+      <PetsList pets={pets} /> */}
+      <Footer />
+    </div>
+  );
+}
 }
 
 export default App;
