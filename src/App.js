@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+// import React from "react";
+import { Route, Router } from "react-router-dom";
 
 /*
   Components
@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Nav />
-        <Switch>
+        <Router>
           <Route exact path="/">
             <Home employees={employees} owners={owners} pets={pets} />
           </Route>
@@ -44,7 +44,7 @@ class App extends React.Component {
           <Route path="/pets">
             <PetsList pets={pets} />
           </Route>
-        </Switch>
+        </Router>
         <Footer />
       </div>
     );
