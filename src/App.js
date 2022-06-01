@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes,} from "react-router-dom";
 
 /*
   Components
@@ -35,14 +35,11 @@ class App extends React.Component {
       <div className="wrapper">
         <Nav />
         <Routes>
-          <Route exact path="/">
-            <Home employees={employees} owners={owners} pets={pets} />
+          <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />}>
           </Route>
-          <Route path="/staff">
-            <StaffList employees={employees} />
+          <Route path="/staff" element={<StaffList employees={employees} />}>
           </Route>
-          <Route path="/pets">
-            <PetsList pets={pets} />
+          <Route path="/pets" element={<PetsList pets={pets} />}>
           </Route>
         </Routes>
         <Footer />

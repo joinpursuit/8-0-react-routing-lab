@@ -1,7 +1,7 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import {Switch, Route, Redirect} from "react-router";
+import {Routes, Route, Navigate} from "react-router";
 
 export const PetsList = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
@@ -17,9 +17,9 @@ export const PetsList = ({ pets }) => {
     <section className="pets-wrapper">
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
-        <Switch>
+        <Routes>
           <Route exact path="/pets/">
-            <Redirect to="/pets/cats" />
+            <Navigate to="/pets/cats" />
           </Route>
           <Route path="/pets/cats">
             {cats.map((cat)=> (<Pet key={cat.id} kind="cat" pet={cat}/>))}
@@ -27,7 +27,7 @@ export const PetsList = ({ pets }) => {
           <Route path="/pets/dogs">
           {dogs.map((dog) => (<Pet key={dog.id} kind="dog" pet={dog} />))}
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </section>
   );
