@@ -46,6 +46,7 @@ class App extends React.Component {
               path="/staff"
               element={<StaffList employees={employees} />}
             />
+            {/* <Route path="/pets" element={<PetsList pets={pets} />} /> */}
             <Route path="/pets">
               <Route index element={<PetsList pets={pets} />} />
               <Route path="cats" element={<PetsList pets={pets} />} />
