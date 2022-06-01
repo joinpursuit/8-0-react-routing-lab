@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 /*
   Components
@@ -33,27 +33,20 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
-        <BrowserRouter>
-          <Nav />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home employees={employees} owners={owners} pets={pets} />
-              }
-            />
-            <Route
-              path="/staff"
-              element={<StaffList employees={employees} />}
-            />
-            <Route path="/pets">
-              <Route index element={<PetsList pets={pets} />} />
-              <Route path="cats" element={<PetsList pets={pets} />} />
-              <Route path="dogs" element={<PetsList pets={pets} />} />
-            </Route>
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home employees={employees} owners={owners} pets={pets} />}
+          />
+          <Route path="/staff" element={<StaffList employees={employees} />} />
+          <Route path="/pets">
+            <Route index element={<PetsList pets={pets} />} />
+            <Route path="cats" element={<PetsList pets={pets} />} />
+            <Route path="dogs" element={<PetsList pets={pets} />} />
+          </Route>
+        </Routes>
+        <Footer />
       </div>
     );
   }
