@@ -1,5 +1,6 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
+import ErrorPage from "../ErrorPage";
 import "./PetsList.css";
 import { Route, Routes } from "react-router-dom";
 
@@ -55,6 +56,7 @@ export const PetsList = ({ pets }) => {
               </>
             }
           />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </section>
     </section>

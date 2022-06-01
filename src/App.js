@@ -9,6 +9,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import ErrorPage from "./components/ErrorPage";
 
 /*
   Data
@@ -36,6 +37,7 @@ class App extends React.Component {
         <Router>
           <Nav />
           <Routes>
+            <Route path="*" element={<ErrorPage />} />
             <Route
               path="/"
               element={
