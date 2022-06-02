@@ -33,6 +33,7 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
+        <Nav/>
         <Routes>
           <Route
             path="/*"

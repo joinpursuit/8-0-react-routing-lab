@@ -10,7 +10,6 @@ export const StaffList = ({ employees }) => {
 
   return (
     <div>
-      <Nav />
       <section className="staff-list">
         <h2>Our Staff</h2>
         <div className="staffers">{staff}</div>

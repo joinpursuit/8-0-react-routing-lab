@@ -8,7 +8,6 @@ import Footer from "../common/Footer";
 export const Home = ({ employees, owners, pets }) => {
   return (
     <main>
-      <Nav/>
       <section className="splash-image">
         <img src={splashImage} alt="Splash." />
         <Highlights employees={employees} owners={owners} pets={pets} />

@@ -19,26 +19,24 @@ export const PetsList = ({ pets }) => {
   const Cats = () => cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />);
   //prettier-ignore
   const Dogs = () => dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />);
-
   const AllPets = () => {
     return (
-      <div>
-        {cats.map((cat) => (<Pet key={cat.id} kind="cat" pet={cat} />))}
-        {dogs.map((dog) => (<Pet key={dog.id} kind="dog" pet={dog} />))}
-      </div>
+      <>
+        <Cats/>
+        <Dogs/>
+      </>
     );
   };
 
   return (
     <div>
-      <Nav />
       <section className="pets-wrapper">
         <PetsListNav cats={cats} dogs={dogs} />
         <section className="pets-list">
           <Routes>
             <Route path="/" element={<AllPets />} />
             <Route path="cats" element={<Cats />} />
-            <Route path="dogs" element={<Dogs />}></Route>
+            <Route path="dogs" element={<Dogs />} />
           </Routes>
         </section>
       </section>
