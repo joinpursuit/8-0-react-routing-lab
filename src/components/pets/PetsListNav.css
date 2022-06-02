@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-.pets-wrapper nav ul li a {
+.pets-wrapper nav ul li {
   background: var(--primary);
   color: white;
   border: 1px solid var(--primary);
@@ -18,7 +18,7 @@
   text-decoration: none;
 }
 
-.pets-wrapper nav ul li a:hover {
+.pets-wrapper nav ul li:hover {
   background: var(--white);
   color: var(--black);
 }

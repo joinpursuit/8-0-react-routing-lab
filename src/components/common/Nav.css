@@ -32,14 +32,14 @@ header ul {
   padding: 0;
 }
 
-header ul li {
+header ul li{
   display: inline-block;
   font-family: var(--font-zen);
   font-size: 18px;
   padding: 0 25px;
 }
 
-header ul li a {
+header ul li{
   color: var(--white);
   border-bottom: 2px solid var(--white);
   font-weight: 500;
@@ -47,7 +47,7 @@ header ul li a {
   text-decoration: none;
 }
 
-header ul li a:hover {
+header ul li:hover {
   color: var(--black);
   border-bottom: 2px solid var(--black);
 }
