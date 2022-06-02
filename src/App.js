@@ -46,7 +46,9 @@ class App extends React.Component {
               path='/staff'
               element={<StaffList employees={employees} />}
             />
-            <Route path='/pet/*' elemente={<PetsList pets={pets} />} />
+            <Route 
+            path="/pets"
+            element={<PetsList pets={pets} />} />
           </Routes>
           <Footer />
         </Router>
