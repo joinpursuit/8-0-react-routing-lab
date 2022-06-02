@@ -19,24 +19,30 @@ export const PetsList = ({ pets }) => {
     <section className='pets-wrapper'>
       <PetsListNav cats={cats} dogs={dogs} />
       <section className='pets-list'>
-       <>
-        <Routes>
-          {/* All cats section */}
-          <Route
-            path='/pets'
-            element= {cats.map((cat) => (
-              <Pet key={cat.id} kind='cat' pet={cat} />
-            ))}
+        {/* All cats section */}
+     <Routes>
+      <Route
+            path="/cats"
+            element={
+              <>
+               
+                {cats.map((cat) => (
+                  <Pet key={cat.id} kind="cat" pet={cat} />
+                ))}
+              </>
+            }
           />
 
           {/* All dogs section */}
-          
           <Route
-          
-            path='/pets'
-            element={dogs.map((dog) => (
-              <Pet key={dog.id} kind='dog' pet={dog} />
-            ))}
+            path="/dogs"
+            element={
+              <>
+                {dogs.map((dog) => (
+                  <Pet key={dog.id} kind="dog" pet={dog} />
+                ))}
+              </>
+            }
           />
            <Route
             path="/"
@@ -54,7 +60,6 @@ export const PetsList = ({ pets }) => {
                 }
                 />
         </Routes>
-        </>
       </section>
     </section>
   );
