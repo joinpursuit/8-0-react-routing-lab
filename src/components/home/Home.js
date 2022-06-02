@@ -1,5 +1,7 @@
 import Highlights from "./Highlights";
 import NewsletterForm from "./NewsletterForm";
+
+import Owner from "../owners/Owner";
 import splashImage from "./andrew-s-unsplash.jpg";
 import "./Home.css";
 
@@ -9,7 +11,7 @@ export const Home = ({ employees, owners, pets }) => {
       <section className="splash-image">
         <img src={splashImage} alt="Splash." />
         <Highlights employees={employees} owners={owners} pets={pets} />
-        <NewsletterForm />
+        <NewsletterForm/> 
       </section>
     </main>
   );

@@ -1,0 +1,29 @@
+.owner-list {
+  margin: 25px auto;
+  width: 70%;
+}
+
+.owners {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.owner {
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+  display: block;
+  padding: 25px;
+  text-align: center;
+}
+
+.owner h3 {
+  margin: 0;
+  text-transform: capitalize;
+  color: var(--success);
+}
+
+.owner h4 {
+  font-weight: 500;
+  margin: 0;
+}
