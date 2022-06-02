@@ -35,7 +35,7 @@ class App extends React.Component {
   render() {
     const { employees, owners, pets } = this.state;
     return (
-      // <Router>
+      <Router>
       <div className='wrapper'>
         <Nav />
         <Routes>
@@ -60,7 +60,7 @@ class App extends React.Component {
 
         <Footer />
       </div>
-      //  </Router>
+      </Router> 
     );
   }
 }
