@@ -27,6 +27,11 @@ export const PetsList = ({ pets }) => {
         {/* All dogs section */}
         {(kind === "dogs" || kind === undefined) &&
           dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />)}
+
+        {/*Not Found section */}
+        {(kind !== "cats" || kind !== "dogs" || kind !== undefined) && (
+          <h2>Not Found</h2>
+        )}
       </section>
     </section>
   );
