@@ -50,8 +50,6 @@ header ul li a {
   text-decoration: none;
   font-family: 'Open Sans', sans-serif; font-weight: 700; 
 }
-
 header ul li a:hover {
-  color: var(--black);
-  border-bottom: 2px solid var(--black);
+  cursor: pointer;color: var(--black);border-bottom: 2px solid var(--black);
 }
