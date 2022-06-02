@@ -1,6 +1,5 @@
 import "./PetsListNav.css";
 import { Link } from "react-router-dom";
-
 export const PetsListNav = ({ cats, dogs }) => {
   return (
     <nav className="pets-nav">
