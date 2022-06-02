@@ -14,5 +14,8 @@
 
 .pets-list article h3,
 .pets-list article p {
-  margin: 0;
+  margin: 0;font-family: 'Open Sans', sans-serif; font-weight: 700;
+}
+.pets-list article h3 i {
+  width: 3px;
 }
