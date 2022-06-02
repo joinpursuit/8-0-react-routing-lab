@@ -42,7 +42,7 @@ class App extends React.Component {
                 <Home employees={employees} owners={owners} pets={pets} />
               }
             />
-            <Route path='/employees'>
+            <Route path='/staff'>
               <Route
                 index
                 element={<StaffList employees={employees} type={'Employees'} />}
