@@ -19,14 +19,12 @@ export const PetsList = ({ pets }) => {
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
         {/* All cats section */}
-        {kind === "cats"
-          ? cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />)
-          : "Not Found"}
+        {kind === "cats" &&
+          cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />)}
 
         {/* All dogs section */}
-        {kind === "dogs"
-          ? dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />)
-          : "Not Found"}
+        {kind === "dogs" &&
+          dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />)}
       </section>
     </section>
   );
