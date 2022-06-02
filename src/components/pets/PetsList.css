@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Merriweather+Sans:wght@700;800&family=Open+Sans:wght@400;500;600;700;800&display=swap');
 .pets-wrapper {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -9,5 +10,6 @@
   margin: 0 25px;
 }
 .pets-list h2 {
-  margin: 2rem auto;text-align: center; font-weight: bold; color: var(--primary);
+  margin: 0 auto 2rem;text-align: center;font-family: 'Open Sans', sans-serif; font-weight: 800; 
+  color: var(--primary);
 }
