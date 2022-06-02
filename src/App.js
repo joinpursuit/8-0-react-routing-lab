@@ -35,13 +35,13 @@ class App extends React.Component {
       <div className="wrapper">
         <Routes>
           <Route
-            path="/"
+            path="/*"
             element={<Home employees={employees} owners={owners} pets={pets} />}
           />
           {/* <Home employees={employees} owners={owners} pets={pets} /> */}
           <Route path="/staff" element={<StaffList employees={employees} />} />
           {/* <StaffList employees={employees} /> */}
-          <Route path="/pets" element={<PetsList pets={pets} />} />
+          <Route path="/pets/*" element={<PetsList pets={pets} />} />
           {/* <PetsList pets={pets} /> */}
         </Routes>
       </div>
