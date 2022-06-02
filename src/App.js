@@ -33,7 +33,7 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
-        <Nav/>
+        <Nav />
         <Routes>
           <Route
             path="/*"
@@ -45,6 +45,7 @@ class App extends React.Component {
           <Route path="/pets/*" element={<PetsList pets={pets} />} />
           {/* <PetsList pets={pets} /> */}
         </Routes>
+        <Footer />
       </div>
     );
   }

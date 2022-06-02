@@ -22,8 +22,8 @@ export const PetsList = ({ pets }) => {
   const AllPets = () => {
     return (
       <>
-        <Cats/>
-        <Dogs/>
+        <Cats />
+        <Dogs />
       </>
     );
   };
@@ -40,7 +40,6 @@ export const PetsList = ({ pets }) => {
           </Routes>
         </section>
       </section>
-      <Footer />
     </div>
   );
 };

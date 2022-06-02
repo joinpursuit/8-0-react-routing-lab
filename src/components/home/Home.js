@@ -13,7 +13,6 @@ export const Home = ({ employees, owners, pets }) => {
         <Highlights employees={employees} owners={owners} pets={pets} />
         <NewsletterForm />
       </section>
-      <Footer/>
     </main>
   );
 };
