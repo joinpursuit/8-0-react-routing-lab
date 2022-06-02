@@ -1,23 +1,25 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
   return (
     <header>
       <article>
         <h1>
-          <a href="/">
+          <Link to="/">
             Northwest <span>Animal Hospital</span>
-          </a>
+          </Link>
         </h1>
       </article>
       <aside>
         <ul>
-          <li>
-            <a href="/staff">All Staff</a>
-          </li>
-          <li>
-            <a href="/pets">All Pets</a>
-          </li>
+          <Link to="/staff">
+            <li>All Staff</li>
+          </Link>
+
+          <Link to="/pets">
+            <li>All Pets</li>
+          </Link>
         </ul>
       </aside>
     </header>
