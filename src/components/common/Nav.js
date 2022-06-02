@@ -1,11 +1,11 @@
-import "./Nav.css";
-import { Link } from "react-router-dom";
+import './Nav.css';
+import { Link } from 'react-router-dom';
 export const Nav = () => {
   return (
     <header>
       <article>
         <h1>
-          <Link to="/">
+          <Link to='/'>
             Northwest <span>Animal Hospital</span>
           </Link>
         </h1>
@@ -13,10 +13,10 @@ export const Nav = () => {
       <aside>
         <ul>
           <li>
-            <Link to="/staff">All Staff</Link>
+            <Link to='/staff'>All Staff</Link>
           </li>
           <li>
-            <Link to="/pets">All Pets</Link>
+            <Link to='/pets'>All Pets</Link>
           </li>
         </ul>
       </aside>

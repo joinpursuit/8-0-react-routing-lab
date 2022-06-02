@@ -1,23 +1,23 @@
-import React from "react";
+import React from 'react';
 
 /*
   Components
 */
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
-import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
-import PetsList from "./components/pets/PetsList";
+import Nav from './components/common/Nav';
+import Footer from './components/common/Footer';
+import Home from './components/home/Home';
+import StaffList from './components/staff/StaffList';
+import PetsList from './components/pets/PetsList';
 
 /*
   Data
   ---------------
   Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
 */
-import { employees } from "./data/employees.js";
-import { owners } from "./data/owners";
-import { pets } from "./data/pets";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { employees } from './data/employees.js';
+import { owners } from './data/owners';
+import { pets } from './data/pets';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,15 +32,23 @@ class App extends React.Component {
   render() {
     const { employees, owners, pets } = this.state;
     return (
-      <div className="wrapper">
+      <div className='wrapper'>
         <Router>
-        <Nav />
-        <Routes>
-        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets}/>}  />
-        <Route path="/staff" element= {<StaffList employees={employees}/> } />
-        <Route path="/pet/*" elemente={<PetsList pets={pets}/>} />
-        </Routes>
-        <Footer />
+          <Nav />
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <Home employees={employees} owners={owners} pets={pets} />
+              }
+            />
+            <Route
+              path='/staff'
+              element={<StaffList employees={employees} />}
+            />
+            <Route path='/pet/*' elemente={<PetsList pets={pets} />} />
+          </Routes>
+          <Footer />
         </Router>
       </div>
     );
