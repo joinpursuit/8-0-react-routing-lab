@@ -33,14 +33,17 @@ class App extends React.Component {
       <div className="wrapper">
         <Nav />
         <Routes>
+          
           <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
           <Route path="index" element={<Home employees={employees} owners={owners} pets={pets} />} />
           <Route path="/staff" element={<StaffList employees={employees} />} />
           <Route path="/pets" element={<PetsList pets={pets}/>} >
+            <Route path="/pets//*" element={<NotFound />} />
             <Route path="/pets/cats" element={<PetsList pets={pets}/>} />  
-            <Route path="/pets/dogs" element={<PetsList pets={pets}/>} />  
+            <Route path="/pets/dogs" element={<PetsList pets={pets}/>} />
+            
           </Route>
-          <Route path="*" element={NotFound} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

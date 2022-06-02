@@ -6,42 +6,35 @@ header {
   display: flex;
   padding: 25px 15% 35px;
 }
-
 header article,
 header aside {
   width: 50%;
 }
-
 header h1 {
   height: auto;
   margin: 0;
   font-size: 36px;
-  font-family: 'Open Sans', sans-serif; font-weight: 800; 
+  font-family: 'Open Sans', sans-serif; font-weight: 800;text-shadow: 2px 2px 2px #d90429;
 }
-
 header h1 span {
   font-size: 24px;
   font-weight: 300;
   font-family: 'Open Sans', sans-serif; font-weight: 500; 
 }
-
 header h1 a {
   color: var(--white);
   text-decoration: none;
 }
-
 header ul {
   list-style: none;
   padding: 0;
 }
-
 header ul li {
   display: inline-block;
   font-family: var(--font-zen);
   font-size: 18px;
   padding: 0 25px;
 }
-
 header ul li a {
   color: var(--white);
   border-bottom: 2px solid var(--white);

@@ -1,11 +1,13 @@
-import "../../index.css";
+import "../common/NotFound.css";
+import pic from "../../assets/doggy-and-kitty.png"
 
 export const NotFound = () => {
   return (
-    <NotFound>
+    <section className="not-found-page">
       <h2>404</h2>
-      <p>Not Found.</p>
-    </NotFound>
+      <p>Content Not found</p>
+      <img src={pic} />
+    </section>
   );
 };
 
