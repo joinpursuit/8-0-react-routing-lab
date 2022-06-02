@@ -10,7 +10,7 @@ export const Pet = ({ kind, pet }) => {
   return (
     <article key={pet.id}>
       <h3>
-        {icon} {pet.name}
+        <i>{icon}</i> {pet.name}
       </h3>
     </article>
   );

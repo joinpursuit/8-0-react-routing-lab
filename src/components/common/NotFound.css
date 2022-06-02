@@ -2,10 +2,20 @@
 
 
 .not-found-page {
-  margin: 2rem 0; text-align: center;vertical-align: middle;
+  width: 80%;margin: 2rem auto;text-align: center;vertical-align: middle;
+}
+.not-found-page .link-wrapper {
+  position: relative;
+}
+.not-found-page .link-wrapper a {
+  padding: 0.6rem 3rem;display: table;margin: auto; font-family: 'Open Sans', sans-serif; font-weight: 800; 
+  color: var(--white); background-color: var(--primary);border-radius: 3px;box-shadow: 0px 3px 0px 1px #d90429; text-decoration: none;
+}
+.not-found-page .link-wrapper img {
+  width: 40%;margin: 0rem auto;
 }
 .not-found-page h2 {
-  margin: 1rem 0 0.5rem; font-size: 6rem;line-height: 5rem;letter-spacing: 2px;
+  margin: 0rem 0 0.5rem; font-size: 6rem;line-height: 5rem;letter-spacing: 2px;
   font-family: 'Open Sans', sans-serif; font-weight: 800; color: var(--primary);text-shadow: 4px 2px 2px #d90429;
 }
 .not-found-page p {
