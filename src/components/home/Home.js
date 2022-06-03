@@ -1,3 +1,4 @@
+import React from "react";
 import Highlights from "./Highlights";
 import NewsletterForm from "./NewsletterForm";
 import splashImage from "./andrew-s-unsplash.jpg";
