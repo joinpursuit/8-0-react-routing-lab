@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 /*
   Components
@@ -18,28 +19,32 @@ import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      employees,
-      owners,
-      pets,
-    };
-  }
+export default function App() {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     employees,
+  //     owners,
+  //     pets,
+  //   };
+  // }
 
-  render() {
-    const { employees, owners, pets } = this.state;
-    return (
-      <div className="wrapper">
+  // render() {
+  //   const { employees, owners, pets } = this.state;
+  return (
+    <div className="wrapper">
+      <Router>
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Routes>
+          <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+          <Route path="/staff" element={<StaffList employees={employees} />} />
+          <Route path="/pets/*" element={<PetsList pets={pets} />} />
+        </Routes>
         <Footer />
-      </div>
-    );
-  }
+      </Router>
+    </div>
+  );
 }
 
-export default App;
+
+
