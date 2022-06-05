@@ -9,6 +9,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import PageNotFound from "./components/common/PageNotFound";
 
 /*
   Data
@@ -36,11 +37,13 @@ class App extends React.Component {
         <Nav />
         <Routes>
           <Route
-            path="/*"
+            exact
+            path="/"
             element={<Home employees={employees} owners={owners} pets={pets} />}
           />
           <Route path="/staff" element={<StaffList employees={employees} />} />
-          <Route path="/pets/*" element={<PetsList pets={pets} />} />
+          <Route exact path="/pets/*" element={<PetsList pets={pets} />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </div>
