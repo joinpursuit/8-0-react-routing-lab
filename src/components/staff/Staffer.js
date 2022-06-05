@@ -1,3 +1,4 @@
+import React from "react";
 export const Staffer = ({ employee }) => {
   const { firstName, lastName, prefix, postfix, title } = employee;
   let name = `${firstName} ${lastName}`;

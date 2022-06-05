@@ -1,3 +1,4 @@
+import React from "react";
 import "./Highlights.css";
 
 export const Highlights = ({ employees, owners, pets }) => {

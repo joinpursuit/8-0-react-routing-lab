@@ -1,3 +1,4 @@
+import React from "react";
 import "./PetsListNav.css";
 
 export const PetsListNav = ({ cats, dogs }) => {

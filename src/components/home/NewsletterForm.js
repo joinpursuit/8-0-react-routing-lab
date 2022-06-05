@@ -1,3 +1,5 @@
+
+import React from "react";
 import "./NewsletterForm.css";
 
 export const NewsletterForm = () => {

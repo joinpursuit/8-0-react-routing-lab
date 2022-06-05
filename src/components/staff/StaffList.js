@@ -1,3 +1,5 @@
+
+import React from "react";
 import Staffer from "./Staffer";
 import "./StaffList.css";
 
