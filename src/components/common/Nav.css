@@ -53,6 +53,8 @@ header ul li a:hover {
   border-bottom: 2px solid var(--black);
 }
 
-title{
+
+.navLink{
   color: white;
+  text-decoration: none;
 }

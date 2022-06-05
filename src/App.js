@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 /*
   Components
 */
@@ -9,7 +8,8 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
-
+import PetForm from "./components/PetForm";
+import NotFound from "./components/NotFound"
 /*
   Data
   ---------------
@@ -39,9 +39,12 @@ export default function App() {
           <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
           <Route path="/staff" element={<StaffList employees={employees} />} />
           <Route path="/pets/*" element={<PetsList pets={pets} />} />
+          <Route path="/petform" element={<PetForm/>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
+        </Router>
         <Footer />
-      </Router>
+      
     </div>
   );
 }

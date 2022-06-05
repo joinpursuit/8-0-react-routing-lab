@@ -2,7 +2,7 @@ import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <p>Northwest Animal Hospital. 2022.</p>
     </footer>
   );

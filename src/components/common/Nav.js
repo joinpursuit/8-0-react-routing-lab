@@ -4,17 +4,17 @@ export const Nav = () => {
   return (
     <header>
       <article>
-        <Link to="/" >
+        <Link to="/" className="navLink">
           <h1>  Northwest <span>Animal Hospital</span></h1>
         </Link>
       </article>
       <aside>
         <ul>
-          <Link to="/staff">
-          <li> All Staff </li>
+          <Link to="/staff"className="navLink">
+            <li> All Staff </li>
           </Link>
-          <Link to="/pets">
-          <li> All Pets </li>
+          <Link to="/pets" className="navLink">
+            <li> All Pets </li>
           </Link>
         </ul>
       </aside>
