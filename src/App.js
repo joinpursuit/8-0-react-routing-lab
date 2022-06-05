@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 /*
   Components
 */
@@ -32,11 +32,19 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
+      <Router>
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <main>
+        <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />}/>
+        <Route path="/staff" element={<StaffList employees={employees} />}/>
+        <Route path="/pets" element={<PetsList pets={pets} type="Cats"/>}/>
+        <Route path="./pets/cats" element={<PetsList pets={pets} type="Cats"/>}/>
+        <Route path="./pets/dogs" element={<PetsList pets={pets} type="Dogs"/>}/>
+        </Routes>
+        </main>
         <Footer />
+        </Router>
       </div>
     );
   }
