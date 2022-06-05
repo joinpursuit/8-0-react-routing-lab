@@ -1,9 +1,8 @@
 import Highlights from "./Highlights";
 import NewsletterForm from "./NewsletterForm";
 import splashImage from "./andrew-s-unsplash.jpg";
-import Nav from "../common/Nav";
 import "./Home.css";
-import Footer from "../common/Footer";
+
 
 export const Home = ({ employees, owners, pets }) => {
   return (
