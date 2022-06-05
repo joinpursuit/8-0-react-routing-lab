@@ -18,7 +18,7 @@ export const PetsList = ({ pets }) => {
     return (
       <div>
         <Meow />
-        <Dogg />
+        <Dog />
       </div>
     );
   };
@@ -26,7 +26,7 @@ export const PetsList = ({ pets }) => {
   const Meow = () => {
     return cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />);
   };
-  const Dogg = () => {
+  const Dog = () => {
     return dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />);
   };
   return (
@@ -36,7 +36,7 @@ export const PetsList = ({ pets }) => {
         <Routes>
           <Route path="/" element={<AllPets />}></Route>
           <Route path="cats" element={<Meow />}></Route>
-          <Route path="dogs" element={<Dogg/>}></Route>
+          <Route path="dogs" element={<Dog/>}></Route>
         </Routes>
       </section>
     </section>
