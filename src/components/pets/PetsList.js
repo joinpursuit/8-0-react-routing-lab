@@ -1,8 +1,6 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import Nav from "../common/Nav";
-import Footer from "../common/Footer";
 import { Routes, Route } from "react-router-dom";
 
 export const PetsList = ({ pets }) => {
