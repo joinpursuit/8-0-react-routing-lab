@@ -1,4 +1,5 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
   return (
@@ -20,8 +21,22 @@ export const Nav = () => {
           </li>
         </ul>
       </aside>
+      <nav>
+        <div>
+          <Link to="/">
+            <h3> Northwest <span>Animal Hospital</span></h3>
+          </Link>
+          <Link to = "/staff">
+            <h3>All Staff</h3>
+          </Link>
+          <Link to="/pets">
+            <h3>All Pets</h3>
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 };
 
 export default Nav;
+
