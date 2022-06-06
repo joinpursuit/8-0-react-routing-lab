@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter  as Router, Route, Routes} from "react-router-dom";
 
 /*
   Components
@@ -17,6 +18,7 @@ import PetsList from "./components/pets/PetsList";
 import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
+// import { Router, Routes } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,11 +34,15 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
+        <Router>
         <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
+        <Routes>
+        <Route path="/" element={<Home Home employees={employees} owners={owners} pets={pets}/>} />
+        <Route path="/staff" element={<StaffList employees={employees}/>} />
+        <Route path="/pets/*" element={<PetsList pets={pets} />} />
+        </Routes>
         <Footer />
+        </Router>
       </div>
     );
   }
