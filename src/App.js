@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 /*
   Components
@@ -17,6 +18,8 @@ import PetsList from "./components/pets/PetsList";
 import { employees } from "./data/employees.js";
 import { owners } from "./data/owners";
 import { pets } from "./data/pets";
+import Pet from "./components/pets/Pet"
+import PetsListNav from "./components/pets/PetsListNav";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,14 +35,20 @@ class App extends React.Component {
     const { employees, owners, pets } = this.state;
     return (
       <div className="wrapper">
-        <Nav />
-        <Home employees={employees} owners={owners} pets={pets} />
-        <StaffList employees={employees} />
-        <PetsList pets={pets} />
-        <Footer />
+        <Router>
+          <Nav />
+          <Routes>
+            <Route Path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
+            <Route Path="/staff"element={<StaffList employees={employees} />} />
+            <Route Path="/pets/*" element={<PetsList pets={pets} />} />
+            <Route path="./pets/cats" element={<PetsList pets={pets} type="Cats"/>}/>
+            <Route path="./pets/dogs" element={<PetsList pets={pets} type="Dogs"/>}/>
+          </Routes>
+          <Footer />
+        </Router>
       </div>
     );
   }
 }
-
+// router, routes and each route has been add to make the page
 export default App;
