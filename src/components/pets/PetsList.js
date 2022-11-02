@@ -1,7 +1,9 @@
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
+import { useEffect } from "react";
 
 export const PetsList = ({ pets, kind }) => {
   const [cats, dogs] = pets.reduce(
@@ -13,19 +15,27 @@ export const PetsList = ({ pets, kind }) => {
     [[], []]
   );
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (kind === "all") {
+      navigate("/pets/cats");
+    }
+  }, [pets]);
+
   return (
     <section className="pets-wrapper">
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
         {/* All cats section */}
-        {kind === "cats" &&
+        {kind !== "dogs" &&
           cats.map((cat) => <Pet key={cat.id} kind="cat" pet={cat} />)}
 
         {/* All dogs section */}
-        {kind === "dogs" &&
+        {kind !== "cats" &&
           dogs.map((dog) => <Pet key={dog.id} kind="dog" pet={dog} />)}
       </section>
-      <Outlet />
+      {/* <Outlet /> */}
     </section>
   );
 };

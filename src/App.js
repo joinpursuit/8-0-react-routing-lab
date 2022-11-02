@@ -34,7 +34,7 @@ function App() {
             element={<Home employees={employees} owners={owners} pets={pets} />}
           />
           <Route path="/staff" element={<StaffList employees={employees} />} />
-          <Route path="/pets" element={<PetsList pets={pets} />}>
+          {/* <Route path="/pets" element={<PetsList pets={pets} kind={"all"}/>}>
             <Route
               path="cats"
               element={<PetsList pets={pets} kind={"cats"} />}
@@ -43,7 +43,16 @@ function App() {
               path="dogs"
               element={<PetsList pets={pets} kind={"dogs"} />}
             />
-          </Route>
+          </Route> */}
+          <Route path="/pets" element={<PetsList pets={pets} kind={"all"}/>} />
+          <Route
+              path="/pets/cats"
+              element={<PetsList pets={pets} kind={"cats"} />}
+            />
+            <Route
+              path="/pets/dogs"
+              element={<PetsList pets={pets} kind={"dogs"} />}
+            />
         </Routes>
         <Footer />
       </Router>
